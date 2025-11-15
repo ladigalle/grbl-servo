@@ -65,6 +65,52 @@
   #define DEFAULT_HOMING_PULLOFF 1.0 // mm
 #endif
 
+#ifdef DEFAULTS_DGX_XY_MODULAR_PLOTTER
+  // Description: DIY XY Modular Plotter with NEMA 17 stepper motors and GT2 belts, 
+  //              driven by three Pololu A4988 stepper drivers with a 12V, 5A power supply.
+  #define DEFAULT_STEP_PULSE_MICROSECONDS 10    // $0 - usec
+  #define DEFAULT_STEPPER_IDLE_LOCK_TIME 25     // $1 - msec (0-254, 255 keeps steppers enabled)
+  #define DEFAULT_STEPPING_INVERT_MASK 0        // $2 - bitmask
+  #define DEFAULT_DIRECTION_INVERT_MASK 3       // $3 - bitmask (Invert X and Y axes)
+  #define DEFAULT_INVERT_ST_ENABLE 0            // $4 - bool
+  #define DEFAULT_INVERT_LIMIT_PINS 1           // $5 - bool
+  #define DEFAULT_INVERT_PROBE_PIN 0            // $6 - bool
+
+  #define DEFAULT_STATUS_REPORT_MASK 1          // $10 - bitmask (MPos enabled)
+  #define DEFAULT_JUNCTION_DEVIATION 0.01       // $11 - mm
+  #define DEFAULT_ARC_TOLERANCE 0.002           // $12 - mm
+  #define DEFAULT_REPORT_INCHES 0               // $13 - bool
+
+  #define DEFAULT_SOFT_LIMIT_ENABLE 1           // $20 - bool
+  #define DEFAULT_HARD_LIMIT_ENABLE 1           // $21 - bool
+  #define DEFAULT_HOMING_ENABLE 1               // $22 - bool
+  #define DEFAULT_HOMING_DIR_MASK 3             // $23 - bitmask (Move negative direction)
+  #define DEFAULT_HOMING_FEED_RATE 100.0        // $24 - mm/min
+  #define DEFAULT_HOMING_SEEK_RATE 1500.0       // $25 - mm/min
+  #define DEFAULT_HOMING_DEBOUNCE_DELAY 250     // $26 - msec (0-65k)
+  #define DEFAULT_HOMING_PULLOFF 1.0            // $27 - mm
+
+  #define DEFAULT_SPINDLE_RPM_MAX 1000.0        // $30 - rpm
+  #define DEFAULT_SPINDLE_RPM_MIN 0.0           // $31 - rpm
+  #define DEFAULT_LASER_MODE 0                  // $32 - false
+
+  #define DEFAULT_X_STEPS_PER_MM 80.0           // $100 - step/mm (GT2 belt with 20 tooth pulley)
+  #define DEFAULT_Y_STEPS_PER_MM 80.0           // $101 - step/mm (GT2 belt with 20 tooth pulley)
+  #define DEFAULT_Z_STEPS_PER_MM 250.0          // $102 - step/mm
+
+  #define DEFAULT_X_MAX_RATE 2500.0             // $110 - mm/min
+  #define DEFAULT_Y_MAX_RATE 2500.0             // $111 - mm/min
+  #define DEFAULT_Z_MAX_RATE 500.0              // $112 - mm/min
+
+  #define DEFAULT_X_ACCELERATION (100.0*60*60)  // $120 - mm/sec² (100*60*60 mm/min^2 = 100 mm/sec^2)
+  #define DEFAULT_Y_ACCELERATION (100.0*60*60)  // $121 - mm/sec² (100*60*60 mm/min^2 = 100 mm/sec^2)
+  #define DEFAULT_Z_ACCELERATION (10.0*60*60)   // $122 - mm/sec² (10*60*60 mm/min^2 = 100 mm/sec^2)
+
+  #define DEFAULT_X_MAX_TRAVEL 297.0            // $130 - mm (NOTE: Must be a positive value)
+  #define DEFAULT_Y_MAX_TRAVEL 210.0            // $131 - mm (NOTE: Must be a positive value)
+  #define DEFAULT_Z_MAX_TRAVEL 200.0            // $132 - mm (NOTE: Must be a positive value)
+#endif
+
 #ifdef DEFAULTS_SHERLINE_5400
   // Description: Sherline 5400 mill with three NEMA 23 Keling  KL23H256-21-8B 185 oz-in stepper motors,
   // driven by three Pololu A4988 stepper drivers with a 30V, 6A power supply at 1.5A per winding.
